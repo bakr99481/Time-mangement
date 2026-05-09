@@ -3,27 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>المؤقت الذكي | PWA</title>
-  <meta name="description" content="مؤقت رقمي احترافي قابل للتثبيت على الشاشة الرئيسية - يعمل بدون إنترنت">
+  <title>المؤقت الذكي | تثبيت فوري</title>
+  <meta name="description" content="مؤقت احترافي - يمكن تثبيته على الشاشة الرئيسية بضغطة واحدة">
   <meta name="theme-color" content="#050505">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="مؤقت PWA">
+  <meta name="apple-mobile-web-app-title" content="مؤقت">
   
-  <!-- Manifest متكامل (مضمن) -->
+  <!-- Manifest جاهز ومتكامل -->
   <link rel="manifest" href="data:application/manifest+json,{
-    %22name%22:%22%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%22,
+    %22name%22:%22%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA%20%D8%A7%D9%84%D8%B0%D9%87%D8%A8%D9%8A%22,
     %22short_name%22:%22%D9%85%D8%A4%D9%82%D8%AA%22,
     %22start_url%22:%22.%22,
     %22display%22:%22standalone%22,
     %22background_color%22:%22%23050505%22,
-    %22theme_color%22:%22%23050505%22,
-    %22orientation%22:%22portrait%22,
+    %22theme_color%22:%22%23000000%22,
     %22icons%22:[
-      { %22src%22:%22data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230d0d0d'/%3E%3Ctext x='50' y='67' font-size='52' text-anchor='middle' fill='white' font-weight='bold'%3E⏱%3C/text%3E%3C/svg%3E%22, %22sizes%22:%22any%22, %22type%22:%22image/svg+xml%22, %22purpose%22:%22any%22 %7D,
-      { %22src%22:%22data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVHhe7d2xTgJhEIXhAwqsKLSw0sLKxorCxkILCwtsLCwsvIWFhf9bMZtsdFhY2Bn2m2SSyVyGJ2R35s2UZRkAAAAAAIB/GUIIwzAMwzAMwzAMwzAMwzAMwzAMwzD/Zco6/5jSfSmlaR7nH1M8H0dK4zilYRjTMIznH1N6PpY0TXP6fud0OyznH1M8H7J0r3s65/S4L+cfUzwecrrVU3rdl3Q9LOf/Qz1+pvnHlJ6HtK57un6e23mGz/FHOs8wDBNlGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZh/ss8Pz/TNE1pGAaGYRiGYRiGYRiG+adZ1zWt65pWVUUAAAAAAPyT/X5Pu90OAAAAAAD+ofV6Tev1GgAAAAAA/mBd17Tb7WgYBoZhGIZhGIZhGIZhGIZhGIZhGIZhmH+a8zxT13UMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzDMv5sP4wNlLQGpD/QAAAAASUVORK5CYII%22, %22sizes%22:%2264x64%22, %22type%22:%22image/png%22 %7D,
-      { %22src%22:%22data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVHhe7dwxTiNRGIDhEwuhoqCioKCgoqCgoKCgoKCgoKCgoKCgoKCgoKBgFBIS6vsuWXsrKysrbAon2X3fY9kz0Tg9TUnwzTjjvwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8lWVZyvP8n6ZpStM0pWma0jAMaRiGNE1TmqYpDcOQhmFI4zgCAADgBcuyLMuyLMuyLMuyP+arr68Ux3Ecx3Ecx3Ecx3Ecx3EcX1Cv10vv12v1fr1W79dr9X691uv1Wq/Xa/V6vVav12v1er1Wr9dr3e+vUtd1qRzHcRzHcRzHcRzHcRzHcfznHAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABfZVmW8jz/p2ma0jRNaZqmNAxDGoYhTdOUpmn60zAMaRiGNE0TAAAAL2RZlmVZlmVZlmVZ9sdcXV2lOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPyVZVnK8/yfpmlapmlJ0zQBAADAC1mWZVmWZVmWZVn2xxyHcRzHcRzHcRwnkfN+l+A4juM4juM4juM4juM4iZzneZ7neZ7neZ7neZ7nuZ7neZ7n+U+zLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLHuH0zRNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwWg4AAAAAAHhR/i2xO2+G7FCFAAAAAElFTkSuQmCC%22, %22sizes%22:%22192x192%22, %22type%22:%22image/png%22 %7D,
-      { %22src%22:%22data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATJSURBVHhe7dwxTiNRGIDhEwuhoqCioKCgoqCgoKCgoKCgoKCgoKCgoKCgoKBgFBIS6vsuWXsrKysrbAon2X3fY9kz0Tg9TUnwzTjjvwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8lWVZyvP8n6ZpStM0pWma0jAMaRiGNE1TmqYpDcOQhmFI4zgCAADgBcuyLMuyLMuyLMuyP+arr68Ux3Ecx3Ecx3Ecx3Ecx3EcX1Cv10vv12v1fr1W79dr9X691uv1Wq/Xa/V6vVav12v1er1Wr9dr3e+vUtd1qRzHcRzHcRzHcRzHcRzHcfznHAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABfZVmW8jz/p2ma0jRNaZqmNAxDGoYhTdOUpmn60zAMaRiGNE0TAAAAL2RZlmVZlmVZlmVZ9sdcXV2lOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPyVZVnK8/yfpmlapmlJ0zQBAADAC1mWZVmWZVmWZVn2xxyHcRzHcRzHcRwnkfN+l+A4juM4juM4juM4juM4iZzneZ7neZ7neZ7neZ7nuZ7neZ7n+U+zLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLMuyLHuH0zRNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwWg4AAAAAAHhR/i2xO2+G7FCFAAAAAElFTkSuQmCC%22, %22sizes%22:%22512x512%22, %22type%22:%22image/png%22 %7D
+      {%22src%22:%22https://cdn-icons-png.flaticon.com/512/2997/2997260.png%22,%22sizes%22:%22512x512%22,%22type%22:%22image/png%22},
+      {%22src%22:%22https://cdn-icons-png.flaticon.com/512/2997/2997260.png%22,%22sizes%22:%22192x192%22,%22type%22:%22image/png%22}
     ]
   }">
   
@@ -32,21 +29,49 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-      user-select: none; /* تجنب تحديد النص أثناء النقر المزدوج */
+      font-family: system-ui, 'Segoe UI', Arial, sans-serif;
+      user-select: none;
     }
 
     body {
       background: #050505;
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-      position: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
-    /* =========================
-       شاشة البداية
-    ========================= */
+    /* زر التثبيت العلوي */
+    .install-btn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: #1f1f1f;
+      border: 1px solid #3a3a3a;
+      border-radius: 60px;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .install-btn:hover {
+      background: #2c2c2c;
+      transform: scale(1.02);
+    }
+    .install-btn.hidden {
+      display: none;
+    }
+
+    /* شاشة البداية */
     .start-screen {
       width: 100%;
       height: 100vh;
@@ -55,83 +80,64 @@
       align-items: center;
       background: #050505;
       padding: 20px;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      transition: opacity 0.2s ease;
     }
 
     .start-box {
-      width: min(420px, 100%);
+      width: min(440px, 94%);
       background: #0d0d0d;
-      border: 3px solid #2b2b2b;
-      border-radius: 28px;
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255,255,255,0.05);
-      backdrop-filter: blur(2px);
+      border: 2px solid #2b2b2b;
+      border-radius: 40px;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.5);
     }
 
     .title {
       color: white;
-      font-size: clamp(28px, 5vw, 38px);
+      font-size: 34px;
       font-weight: 800;
-      text-align: center;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
     }
 
     .inputs {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap: 12px;
       justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
 
     .inputs input {
-      width: 100%;
-      max-width: 100px;
-      height: 80px;
-      background: #050505;
-      border: 2px solid #333;
-      border-radius: 20px;
+      width: 100px;
+      height: 85px;
+      background: #010101;
+      border: 2px solid #3a3a3a;
+      border-radius: 24px;
       color: white;
-      font-size: clamp(28px, 5vw, 42px);
+      font-size: 38px;
       font-weight: bold;
       text-align: center;
       outline: none;
-      transition: all 0.2s;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
-    }
-
-    .inputs input:focus {
-      border-color: #888;
-      transform: scale(1.02);
     }
 
     .start-btn {
+      width: 100%;
       height: 70px;
-      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-      color: #000;
+      background: white;
+      color: black;
       border: none;
-      border-radius: 50px;
-      font-size: clamp(22px, 4vw, 28px);
+      border-radius: 60px;
+      font-size: 26px;
       font-weight: 800;
       cursor: pointer;
-      transition: 0.2s;
-      letter-spacing: 2px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: 0.15s linear;
     }
+    .start-btn:active { transform: scale(0.97); }
 
-    .start-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* =========================
-       شاشة العداد
-    ========================= */
+    /* شاشة المؤقت */
     .timer-screen {
       width: 100%;
       height: 100vh;
@@ -139,344 +145,249 @@
       justify-content: center;
       align-items: center;
       background: #050505;
-      padding: 20px;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
     }
 
     .clock {
       display: flex;
-      gap: clamp(12px, 4vw, 40px);
-      width: 100%;
-      justify-content: center;
-      align-items: center;
+      gap: 30px;
       flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
     }
 
     .card {
-      width: min(210px, 26vw);
-      height: min(250px, 34vw);
-      min-width: 100px;
-      min-height: 130px;
+      width: 190px;
+      height: 230px;
       background: #0d0d0d;
       border: 3px solid #2b2b2b;
-      border-radius: 28px;
-      position: relative;
+      border-radius: 35px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.08);
-      transition: all 0.1s;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 20px 35px black;
     }
-
     .card::after {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent 50%, rgba(0,0,0,0.4));
+      background: linear-gradient(to bottom, rgba(255,255,255,0.07), transparent 60%);
+      border-radius: 35px;
       pointer-events: none;
     }
 
     .number {
-      color: #f5f5f5;
-      font-size: clamp(70px, 12vw, 180px);
+      font-size: 100px;
       font-weight: 800;
-      letter-spacing: 6px;
-      text-shadow: 0 5px 10px #00000055, 0 0 20px rgba(255,255,255,0.2);
-      font-variant-numeric: tabular-nums;
+      color: #f0f0f0;
+      text-shadow: 0 5px 12px black;
+      letter-spacing: 5px;
     }
 
-    /* رسالة تلميح صغيرة للنقر المزدوج */
-    .hint-tip {
+    .hint {
       position: fixed;
       bottom: 20px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: #6a6a6a;
-      font-size: 13px;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
-      width: fit-content;
-      margin: 0 auto;
-      padding: 6px 14px;
+      background: #1a1a1acc;
+      backdrop-filter: blur(10px);
+      padding: 8px 18px;
       border-radius: 40px;
-      pointer-events: none;
-      z-index: 10;
+      color: #aaa;
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: 0.5px;
     }
 
-    @media (max-width: 550px) {
-      .inputs input {
-        max-width: 80px;
-        height: 65px;
-      }
-      .start-box {
-        padding: 30px 20px;
-      }
-    }
-
-    /* تأثير ناعم لل pause */
-    .paused-effect {
-      opacity: 0.7;
-      transition: opacity 0.2s;
+    @media (max-width: 580px) {
+      .card { width: 120px; height: 150px; }
+      .number { font-size: 58px; }
+      .inputs input { width: 75px; height: 70px; font-size: 28px; }
+      .install-btn { top: 10px; right: 10px; padding: 6px 14px; font-size: 12px; }
     }
   </style>
 </head>
 <body>
 
+<button id="installButton" class="install-btn">📱 تثبيت التطبيق +</button>
+
 <!-- شاشة البداية -->
 <div class="start-screen" id="startScreen">
   <div class="start-box">
-    <div class="title">⏱️ START TIMER</div>
+    <div class="title">⏱️ المؤقت الذكي</div>
     <div class="inputs">
-      <input type="number" id="hoursInput" placeholder="HH" min="0" value="0">
-      <input type="number" id="minutesInput" placeholder="MM" min="0" value="0">
-      <input type="number" id="secondsInput" placeholder="SS" min="0" value="0">
+      <input type="number" id="hoursInput" placeholder="ساعة" value="0" min="0">
+      <input type="number" id="minutesInput" placeholder="دقيقة" value="1" min="0">
+      <input type="number" id="secondsInput" placeholder="ثانية" value="0" min="0">
     </div>
-    <button class="start-btn" id="startBtn">▶ START</button>
+    <button class="start-btn" id="startBtn">▶ ابدأ</button>
   </div>
 </div>
 
 <!-- شاشة المؤقت -->
 <div class="timer-screen" id="timerScreen">
   <div class="clock">
-    <div class="card">
-      <div class="number" id="hours">00</div>
-    </div>
-    <div class="card">
-      <div class="number" id="minutes">00</div>
-    </div>
-    <div class="card">
-      <div class="number" id="seconds">00</div>
-    </div>
+    <div class="card"><div class="number" id="hours">00</div></div>
+    <div class="card"><div class="number" id="minutes">00</div></div>
+    <div class="card"><div class="number" id="seconds">00</div></div>
   </div>
-  <div class="hint-tip">✨ اضغط مرتين (Double click) لإيقاف / تشغيل المؤقت ✨</div>
+  <div class="hint">⏯️ نقر مزدوج للتشغيل/الإيقاف المؤقت</div>
 </div>
 
 <script>
-  (function() {
-    // عناصر DOM
-    const startScreen = document.getElementById('startScreen');
-    const timerScreen = document.getElementById('timerScreen');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    const startBtn = document.getElementById('startBtn');
-    const hoursInput = document.getElementById('hoursInput');
-    const minutesInput = document.getElementById('minutesInput');
-    const secondsInput = document.getElementById('secondsInput');
+  // ---- عناصر DOM ----
+  const startScreenDiv = document.getElementById('startScreen');
+  const timerScreenDiv = document.getElementById('timerScreen');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+  const startBtn = document.getElementById('startBtn');
+  const hoursInput = document.getElementById('hoursInput');
+  const minutesInput = document.getElementById('minutesInput');
+  const secondsInput = document.getElementById('secondsInput');
 
-    // متغيرات الحالة
-    let totalSeconds = 0;          // الوقت المنقضي منذ بدء العد (أو المستمر)
-    let targetSeconds = 0;         // الهدف الإجمالي الذي نريد الوصول إليه (بحد أقصى)
-    let timerInterval = null;
-    let isPaused = false;
-    let isRunning = false;          // هل المؤقت في وضع التشغيل (لم ينته بعد)
+  let totalSeconds = 0;
+  let targetSeconds = 0;
+  let timerInterval = null;
+  let isPaused = false;
+  let isActive = false;
 
-    // مساعد تحديث واجهة العداد بناءً على totalSeconds
-    function updateDisplay() {
-      let hours = Math.floor(totalSeconds / 3600);
-      let minutes = Math.floor((totalSeconds % 3600) / 60);
-      let secs = totalSeconds % 60;
-      
-      hoursEl.textContent = String(hours).padStart(2, '0');
-      minutesEl.textContent = String(minutes).padStart(2, '0');
-      secondsEl.textContent = String(secs).padStart(2, '0');
-    }
+  function updateTimerUI() {
+    let h = Math.floor(totalSeconds / 3600);
+    let m = Math.floor((totalSeconds % 3600) / 60);
+    let s = totalSeconds % 60;
+    hoursEl.textContent = String(h).padStart(2, '0');
+    minutesEl.textContent = String(m).padStart(2, '0');
+    secondsEl.textContent = String(s).padStart(2, '0');
+  }
 
-    // إيقاف التايمر بشكل كامل
-    function stopTimerClean() {
-      if (timerInterval) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-      }
-      isRunning = false;
-      isPaused = false;
-      // إزالة تأثير التوقف البصري
-      document.querySelectorAll('.card').forEach(card => {
-        card.style.opacity = '';
-        card.style.filter = '';
-      });
+  function stopTimer() {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
     }
-
-    // بدء التايمر من الحالة الحالية (إما مستمر أو متجدد)
-    function startCountUp() {
-      if (timerInterval) clearInterval(timerInterval);
-      
-      timerInterval = setInterval(() => {
-        // فقط إذا لم يكن في وضع الإيقاف المؤقت والمؤقت لا يزال قيد التشغيل (لم نصل للهدف)
-        if (!isPaused && isRunning) {
-          // زيادة الثانية
-          totalSeconds++;
-          updateDisplay();
-          
-          // التحقق من الوصول إلى الهدف
-          if (totalSeconds >= targetSeconds) {
-            // انتهى المؤقت تماماً
-            clearInterval(timerInterval);
-            timerInterval = null;
-            isRunning = false;
-            isPaused = false;
-            // إعادة تعيين البصريات
-            document.querySelectorAll('.card').forEach(card => {
-              card.style.opacity = '';
-            });
-            // اختياري: إشعار اهتزاز ناعم إذا كان مدعوماً (ليس إلزامياً)
-            if (navigator.vibrate) navigator.vibrate(200);
-          }
-        }
-      }, 1000);
-    }
-
-    // دالة بدء العد الجديد من الصفر
-    function initiateNewTimer(secondsTarget) {
-      // إنهاء أي مؤقت سابق
-      if (timerInterval) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-      }
-      
-      targetSeconds = secondsTarget;
-      totalSeconds = 0;
-      isPaused = false;
-      isRunning = true;
-      
-      updateDisplay();
-      
-      // إزالة أي تأثير pause متبقي
-      document.querySelectorAll('.card').forEach(card => {
-        card.style.opacity = '';
-        card.style.filter = '';
-      });
-      
-      // بدء التحديث التصاعدي
-      startCountUp();
-    }
-    
-    // حدث النقر على زر البدء
-    startBtn.addEventListener('click', () => {
-      let h = parseInt(hoursInput.value) || 0;
-      let m = parseInt(minutesInput.value) || 0;
-      let s = parseInt(secondsInput.value) || 0;
-      
-      // التأكد من عدم وجود قيم سالبة
-      h = Math.max(0, h);
-      m = Math.max(0, m);
-      s = Math.max(0, s);
-      
-      const totalTarget = (h * 3600) + (m * 60) + s;
-      
-      if (totalTarget <= 0) {
-        // إذا كان الوقت صفراً لا نبدأ
-        return;
-      }
-      
-      // إخفاء شاشة البداية وإظهار شاشة المؤقت
-      startScreen.style.display = 'none';
-      timerScreen.style.display = 'flex';
-      
-      // بدء المؤقت الجديد
-      initiateNewTimer(totalTarget);
-    });
-    
-    // دعم النقر المزدوج على شاشة المؤقت للتشغيل/الإيقاف المؤقت
-    timerScreen.addEventListener('dblclick', (e) => {
-      // منع انتشار الأحداث إذا كان داخل أطفال
-      e.stopPropagation();
-      
-      // فقط إذا كان المؤقت يعمل (لم ينتهِ بعد) وأيضاً targetSeconds محدد
-      if (!isRunning) return;
-      
-      // تبديل حالة الإيقاف المؤقت
-      isPaused = !isPaused;
-      
-      // تأثير بصري بسيط للإيقاف المؤقت
-      const cards = document.querySelectorAll('.card');
-      if (isPaused) {
-        cards.forEach(card => {
-          card.style.opacity = '0.65';
-          card.style.filter = 'grayscale(0.2)';
-        });
-      } else {
-        cards.forEach(card => {
-          card.style.opacity = '';
-          card.style.filter = '';
-        });
-      }
-      
-      // إضافة لمسة ثانوية: لا حاجة لإعادة جدولة التايمر، لأن setInterval يعمل ويستجيب للعلم isPaused
-      // (المؤقت يعمل بالفعل ويتحقق كل ثانية isPaused)
-    });
-    
-    // منع أي سلوك غير مرغوب فيه عند النقر على شاشة البداية
-    // إضافة معالجة للصفحة في حالة العودة إلى الخلفية أو إعادة الفتح – الحفاظ على الحالة
-    window.addEventListener('beforeunload', () => {
-      if (timerInterval) {
-        // لا داعي لإنهاء بقوة ، فقط نتجنب حفظ أي شيء لأننا نريد سلوك بسيط
-      }
-    });
-    
-    // إضافة دعم لخدمة الـ PWA (Service Worker) لتخزين الكاش وجعل التطبيق يعمل بدون إنترنت
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        // إنشاء Service Worker ديناميكي داخل كود لضمان عمل PWA بشكل كامل
-        const swCode = `
-          self.addEventListener('fetch', event => {
-            event.respondWith(
-              caches.match(event.request).then(response => {
-                return response || fetch(event.request);
-              })
-            );
-          });
-          self.addEventListener('install', event => {
-            self.skipWaiting();
-            event.waitUntil(
-              caches.open('timer-v1').then(cache => {
-                return cache.addAll(['/', '/index.html']);
-              })
-            );
-          });
-        `;
-        const blob = new Blob([swCode], { type: 'application/javascript' });
-        const swUrl = URL.createObjectURL(blob);
-        navigator.serviceWorker.register(swUrl).then(reg => {
-          console.log('Service Worker registered successfully for PWA');
-          URL.revokeObjectURL(swUrl);
-        }).catch(err => console.log('SW registration failed:', err));
-      });
-    }
-    
-    // إصلاح تحسين العرض للمرة الأولى: إذا حاول المستخدم الضغط على زر البدء بأكثر من طريقة
-    // التأكد من أن المدخلات لا تسمح بقيم فارغة تؤدي لـ NaN
-    [hoursInput, minutesInput, secondsInput].forEach(inp => {
-      inp.addEventListener('change', function() {
-        if (this.value === '' || this.value === null) this.value = 0;
-        let v = parseInt(this.value);
-        if (isNaN(v)) this.value = 0;
-        else if (v < 0) this.value = 0;
-      });
-    });
-    
-    // دعم حالة الهاتف: إذا تم إخفاء التطبيق، لا نريد مشاكل — مؤقتنا دقيق 
-    // ولن يؤثر ذلك على الأداء. الحل الأمثل: إعادة تزامن المدة غير مطلوب
-    
-    // ميزة إضافية: عند إعادة فتح التطبيق من التثبيت، التأكد من عدم وجود شاشة عالقة
-    // التأكد من أن startScreen مرئي في البداية فقط
-    startScreen.style.display = 'flex';
-    timerScreen.style.display = 'none';
-    
-    // إعادة ضبط كاملة لأي حالة سابقة إذا تم تحميل الصفحة مرة ثانية
-    if (timerInterval) clearInterval(timerInterval);
-    isRunning = false;
+    isActive = false;
     isPaused = false;
+    // ازالة تأثير pause visible
+    document.querySelectorAll('.card').forEach(c => c.style.opacity = '');
+  }
+
+  function runTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      if (!isPaused && isActive) {
+        totalSeconds++;
+        updateTimerUI();
+        if (totalSeconds >= targetSeconds) {
+          // انتهى الوقت
+          clearInterval(timerInterval);
+          timerInterval = null;
+          isActive = false;
+          isPaused = false;
+          document.querySelectorAll('.card').forEach(c => c.style.opacity = '');
+          if (navigator.vibrate) navigator.vibrate(300);
+        }
+      }
+    }, 1000);
+  }
+
+  function startNewTimer(secondsTarget) {
+    if (timerInterval) clearInterval(timerInterval);
+    targetSeconds = secondsTarget;
     totalSeconds = 0;
-    targetSeconds = 0;
-    updateDisplay();
-  })();
+    isPaused = false;
+    isActive = true;
+    updateTimerUI();
+    document.querySelectorAll('.card').forEach(c => c.style.opacity = '');
+    runTimer();
+  }
+
+  startBtn.addEventListener('click', () => {
+    let h = Math.max(0, parseInt(hoursInput.value) || 0);
+    let m = Math.max(0, parseInt(minutesInput.value) || 0);
+    let s = Math.max(0, parseInt(secondsInput.value) || 0);
+    let totalTarget = (h * 3600) + (m * 60) + s;
+    if (totalTarget <= 0) return;
+    
+    startScreenDiv.style.display = 'none';
+    timerScreenDiv.style.display = 'flex';
+    startNewTimer(totalTarget);
+  });
+
+  // نقر مزدوج لإيقاف/تشغيل مؤقت
+  timerScreenDiv.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    if (!isActive) return;
+    isPaused = !isPaused;
+    let cards = document.querySelectorAll('.card');
+    if (isPaused) {
+      cards.forEach(c => c.style.opacity = '0.6');
+    } else {
+      cards.forEach(c => c.style.opacity = '');
+    }
+  });
+
+  // ================= PWA التثبيت الفعال =================
+  let deferredPrompt = null;
+  const installBtn = document.getElementById('installButton');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.classList.remove('hidden');
+    installBtn.style.display = 'flex';
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        installBtn.classList.add('hidden');
+      }
+      deferredPrompt = null;
+    } else {
+      // للمتصفحات التي لا تدعم beforeinstallprompt نعرض رسالة توجيه
+      alert("✨ لتثبيت التطبيق: اضغط على قائمة المتصفح (٣ نقاط) واختر 'تثبيت التطبيق' أو 'Add to Home Screen'");
+    }
+  });
+
+  // إذا تم تثبيت التطبيق بالفعل نخفي الزر
+  window.addEventListener('appinstalled', () => {
+    installBtn.classList.add('hidden');
+    deferredPrompt = null;
+  });
+
+  // إظهار وإخفاء الزر بشكل افتراضي (قد لا يظهر في بعض البيئات)
+  if (!window.matchMedia('(display-mode: standalone)').matches) {
+    // نعرض فقط اذا لم يكن مثبت مسبقاً
+  }
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    installBtn.style.display = 'none';
+  }
+
+  // service worker بسيط لتخزين الملفات وجعلها تعمل اوفلاين تلقائياً
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      const swCode = `self.addEventListener('fetch', e => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
+      self.addEventListener('install', e => e.waitUntil(caches.open('timer-cache').then(c => c.addAll(['/']))));`;
+      const blob = new Blob([swCode], {type: 'application/javascript'});
+      const swUrl = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(swUrl).then(() => console.log('SW ready'));
+    });
+  }
+
+  // منع اخطاء المدخلات
+  [hoursInput, minutesInput, secondsInput].forEach(inp => {
+    inp.addEventListener('change', function() {
+      let val = parseInt(this.value);
+      if (isNaN(val) || val < 0) this.value = 0;
+    });
+  });
+  
+  // اظهار اولي
+  startScreenDiv.style.display = 'flex';
+  timerScreenDiv.style.display = 'none';
 </script>
 </body>
 </html>
